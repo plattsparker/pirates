@@ -51,7 +51,7 @@ class World (context.Context):
         self.locs[self.startx+1][self.starty] = whirl
 
         #Test island: always start off next to a test island. Swap in your island to test yours.
-        testland = island.Island (self.startx, self.starty+1, self)
+        testland = parker.Island (self.startx, self.starty+1, self)
         self.locs[self.startx][self.starty+1] = testland
 
         # Peaceful island directly to the right of the spawning location.
@@ -79,7 +79,7 @@ class World (context.Context):
             num_events = random.randint (0,2)
             random.shuffle (self.events)
             for i in range (0, num_events):
-                today_event = self.events.pop()
+                today_event = self.events.pop(0)
                 display.announce ("----------------------",pause=False)
                 results = today_event.process (self)
                 display.announce (results["message"])
