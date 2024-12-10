@@ -214,7 +214,6 @@ class CurvedBarrelShotgun(Item):
 
     def pickTargets(self, action, attacker, allies, enemies):
         number_of_attacks = random.randrange(1,4)
-        print(number_of_attacks)
     
         if(len(enemies) <= number_of_attacks):
             return enemies
